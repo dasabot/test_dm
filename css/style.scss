@@ -13,7 +13,6 @@ body {
 a {
   text-decoration: none;
   color: $gray;
-
 }
 
 
@@ -115,9 +114,6 @@ ul {
     }
 
     &--active {
-      .sub {
-        display: block;
-      }
 
       a {
         color: black;
@@ -188,127 +184,133 @@ ul {
       }
     }
 
-    &--completed {
-      .sub__step {
-
-        &::after,
-        &::before {
-          background-color: $light-green;
-        }
-
-        &--active {
-          background: rgb(212, 247, 225);
-
-          &:hover{
-            background: rgb(212, 247, 225);
-          }
-
-          &::after {
-            background: linear-gradient(180deg, $light-green 1%, $green 50%, $light-green 88%);
-          }
-
-          &::before {
-            background: $green;
-          }
-        }
-      }
-    }
-  }
-}
-
-.sub {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  padding-left: 0;
-  margin-top: 14px;
-  display: none;
-
-  &__step {
-    position: relative;
-    margin-bottom: 8px;
-    width: fit-content;
-    padding-left: 44px;
-    margin-left: -44px;
-    border-radius: 2px;
-    line-height: 24px;
-    letter-spacing: -0.09px;
-
-    a {
-      padding-right: 12px;
-    }
-
-    &:hover {
-      background: rgba(245, 246, 248, 1);
-
-    }
-
-    &:active {
-      box-shadow: 0 0 1px 1px $yellow;
-      border-radius: 2px;
-      outline: none;
-    }
-
-    &:not(:active) a:focus {
-      span {
-        box-shadow: 0 0 1px 1px $yellow;
-        border-radius: 2px;
-        outline: none;
-      }
-    }
-
-    &::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      background-color: $blue;
-      border-radius: 1px;
-      position: absolute;
-      left: 17px;
-      top: 0;
-      bottom: 0;
-      margin: auto 0;
-    }
-
-    &::after {
+    &--active &__sublist {
       display: block;
-      content: "";
-      width: 2px;
-      position: absolute;
-      background-color: $blue;
-      left: 17px;
-      top: -8px;
-      bottom: -8px;
     }
 
-    &:nth-of-type(1) {
-      &::after {
-        top: -14px;
+    &--completed & {
+      &__sublist {
+        &__step {
+
+          &::after,
+          &::before {
+            background-color: $light-green;
+          }
+
+          &--active {
+            background: rgb(212, 247, 225);
+
+            &:hover {
+              background: rgb(212, 247, 225);
+            }
+
+            &::after {
+              background: linear-gradient(180deg, $light-green 1%, $green 50%, $light-green 88%);
+            }
+
+            &::before {
+              background: $green;
+            }
+          }
+        }
       }
     }
 
-    &--active {
-      background: $light-blue;
-      font-weight: 500;
+    &__sublist {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      padding-left: 0;
+      margin-top: 14px;
+      display: none;
 
-      &::before {
-        background-color: $blue;
-      }
+      &__step {
+        position: relative;
+        margin-bottom: 8px;
+        width: fit-content;
+        padding-left: 44px;
+        margin-left: -44px;
+        border-radius: 2px;
+        line-height: 24px;
+        letter-spacing: -0.09px;
 
-      &::after {
-        background: linear-gradient(180deg, $blue 58%, $light-blue 80%);
+        a {
+          padding-right: 12px;
+        }
 
-      }
+        &:hover {
+          background: rgba(245, 246, 248, 1);
 
-      & ~ * {
+        }
+
+        &:active {
+          box-shadow: 0 0 1px 1px $yellow;
+          border-radius: 2px;
+          outline: none;
+        }
+
+        &:not(:active) a:focus {
+          span {
+            box-shadow: 0 0 1px 1px $yellow;
+            border-radius: 2px;
+            outline: none;
+          }
+        }
 
         &::before {
-          background: $light-blue;
-
+          content: '';
+          width: 5px;
+          height: 5px;
+          background-color: $blue;
+          border-radius: 1px;
+          position: absolute;
+          left: 17px;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
         }
 
         &::after {
+          display: block;
+          content: "";
+          width: 2px;
+          position: absolute;
+          background-color: $blue;
+          left: 17px;
+          top: -8px;
+          bottom: -8px;
+        }
+
+        &:nth-of-type(1) {
+          &::after {
+            top: -14px;
+          }
+        }
+
+        &--active {
           background: $light-blue;
+          font-weight: 500;
+
+          &::before {
+            background-color: $blue;
+          }
+
+          &::after {
+            background: linear-gradient(180deg, $blue 58%, $light-blue 80%);
+
+          }
+
+          & ~ * {
+
+            &::before {
+              background: $light-blue;
+
+            }
+
+            &::after {
+              background: $light-blue;
+            }
+          }
         }
       }
     }
