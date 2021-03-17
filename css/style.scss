@@ -31,8 +31,7 @@ ul {
     line-height: 36px;
     position: relative;
     margin-bottom: 30px;
-    letter-spacing: -0.26px;
-
+    letter-spacing: -.26px;
 
     a {
       margin-left: -46px;
@@ -56,7 +55,6 @@ ul {
 
       span {
         border-bottom: 1px solid $light-gray;
-
       }
 
       &:hover span {
@@ -126,7 +124,8 @@ ul {
           border-bottom: none;
         }
 
-        &:focus, :active {
+        &:focus,
+        &:active {
           color: black;
           box-shadow: none;
           outline: none;
@@ -151,7 +150,8 @@ ul {
             color: $medium-gray;
           }
 
-          &:focus, :active {
+          &:focus,
+          &:active {
             color: $medium-gray;
             box-shadow: none;
             outline: none;
@@ -179,7 +179,6 @@ ul {
 
         &::after {
           background-color: $light-gray;
-
         }
       }
     }
@@ -198,10 +197,10 @@ ul {
           }
 
           &--active {
-            background: rgb(212, 247, 225);
+            background: $light-green;
 
             &:hover {
-              background: rgb(212, 247, 225);
+              background: $light-green;
             }
 
             &::after {
@@ -232,7 +231,7 @@ ul {
         margin-left: -44px;
         border-radius: 2px;
         line-height: 24px;
-        letter-spacing: -0.09px;
+        letter-spacing: -.09px;
 
         a {
           padding-right: 12px;
@@ -240,7 +239,6 @@ ul {
 
         &:hover {
           background: rgba(245, 246, 248, 1);
-
         }
 
         &:active {
@@ -297,14 +295,12 @@ ul {
 
           &::after {
             background: linear-gradient(180deg, $blue 58%, $light-blue 80%);
-
           }
 
           & ~ * {
 
             &::before {
               background: $light-blue;
-
             }
 
             &::after {

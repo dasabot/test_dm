@@ -92,9 +92,6 @@ ul {
 .global__step--active:not(.global__step--completed)::after {
   background-color: #eaecef;
 }
-.global__step--active .sub {
-  display: block;
-}
 .global__step--active a {
   color: black;
 }
@@ -104,7 +101,7 @@ ul {
 .global__step--active a:hover span {
   border-bottom: none;
 }
-.global__step--active a:focus, .global__step--active a :active {
+.global__step--active a:focus, .global__step--active a:active {
   color: black;
   box-shadow: none;
   outline: none;
@@ -124,7 +121,7 @@ ul {
 .global__step--active ~ * a:hover {
   color: #858585;
 }
-.global__step--active ~ * a:focus, .global__step--active ~ * a :active {
+.global__step--active ~ * a:focus, .global__step--active ~ * a:active {
   color: #858585;
   box-shadow: none;
   outline: none;
@@ -148,23 +145,25 @@ ul {
 .global__step--active ~ *::after {
   background-color: #eaecef;
 }
-.global__step--completed .sub__step::after, .global__step--completed .sub__step::before {
+.global__step--active .global__step__sublist {
+  display: block;
+}
+.global__step--completed .global__step__sublist__step::after, .global__step--completed .global__step__sublist__step::before {
   background-color: #d4f7e1;
 }
-.global__step--completed .sub__step--active {
+.global__step--completed .global__step__sublist__step--active {
   background: #d4f7e1;
 }
-.global__step--completed .sub__step--active:hover {
+.global__step--completed .global__step__sublist__step--active:hover {
   background: #d4f7e1;
 }
-.global__step--completed .sub__step--active::after {
+.global__step--completed .global__step__sublist__step--active::after {
   background: linear-gradient(180deg, #d4f7e1 1%, #04b304 50%, #d4f7e1 88%);
 }
-.global__step--completed .sub__step--active::before {
+.global__step--completed .global__step__sublist__step--active::before {
   background: #04b304;
 }
-
-.sub {
+.global__step__sublist {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
@@ -172,7 +171,7 @@ ul {
   margin-top: 14px;
   display: none;
 }
-.sub__step {
+.global__step__sublist__step {
   position: relative;
   margin-bottom: 8px;
   width: fit-content;
@@ -182,23 +181,23 @@ ul {
   line-height: 24px;
   letter-spacing: -0.09px;
 }
-.sub__step a {
+.global__step__sublist__step a {
   padding-right: 12px;
 }
-.sub__step:hover {
+.global__step__sublist__step:hover {
   background: #f5f6f8;
 }
-.sub__step:active {
+.global__step__sublist__step:active {
   box-shadow: 0 0 1px 1px #FFC633;
   border-radius: 2px;
   outline: none;
 }
-.sub__step:not(:active) a:focus span {
+.global__step__sublist__step:not(:active) a:focus span {
   box-shadow: 0 0 1px 1px #FFC633;
   border-radius: 2px;
   outline: none;
 }
-.sub__step::before {
+.global__step__sublist__step::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -210,7 +209,7 @@ ul {
   bottom: 0;
   margin: auto 0;
 }
-.sub__step::after {
+.global__step__sublist__step::after {
   display: block;
   content: "";
   width: 2px;
@@ -220,23 +219,23 @@ ul {
   top: -8px;
   bottom: -8px;
 }
-.sub__step:nth-of-type(1)::after {
+.global__step__sublist__step:nth-of-type(1)::after {
   top: -14px;
 }
-.sub__step--active {
+.global__step__sublist__step--active {
   background: #ebf1fb;
   font-weight: 500;
 }
-.sub__step--active::before {
+.global__step__sublist__step--active::before {
   background-color: #5392f7;
 }
-.sub__step--active::after {
+.global__step__sublist__step--active::after {
   background: linear-gradient(180deg, #5392f7 58%, #ebf1fb 80%);
 }
-.sub__step--active ~ *::before {
+.global__step__sublist__step--active ~ *::before {
   background: #ebf1fb;
 }
-.sub__step--active ~ *::after {
+.global__step__sublist__step--active ~ *::after {
   background: #ebf1fb;
 }
 
