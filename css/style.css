@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #4c555b;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.global {
+  counter-reset: list;
+  overflow: hidden;
+  padding: 5px 50px;
+}
+.global__step {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  position: relative;
+  margin-bottom: 30px;
+  letter-spacing: -0.26px;
+}
+.global__step a {
+  margin-left: -46px;
+  padding-left: 44px;
+  display: block;
+  width: fit-content;
+  padding-right: 15px;
+}
+.global__step a:focus, .global__step a:active {
+  color: #eb4410;
+  box-shadow: 0 0 1px 1px #FFC633;
+  border-radius: 2px;
+  outline: none;
+}
+.global__step a:hover {
+  color: #eb4410;
+}
+.global__step a span {
+  border-bottom: 1px solid #eaecef;
+}
+.global__step a:hover span {
+  border-bottom: 1px solid #eec7ba;
+}
+.global__step:last-of-type {
+  margin-bottom: 0;
+}
+.global__step:last-of-type::after {
+  display: none;
+}
+.global__step::before {
+  counter-increment: list;
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background-color: #d4f7e1;
+  border-radius: 20px;
+  text-align: center;
+  left: -44px;
+  line-height: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.07967 15.2898L5.96144 13.172C5.52978 12.7403 5.52978 12.043 5.96144 11.6113C6.39311 11.1797 7.09042 11.1797 7.52208 11.6113L8.86552 12.9433L15.3737 6.43508C15.8054 6.00341 16.5027 6.00341 16.9343 6.43508C17.366 6.86674 17.366 7.56405 16.9343 7.99572L9.64031 15.2898C9.21971 15.7214 8.51133 15.7214 8.07967 15.2898Z' fill='%2304B34A'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.global__step::after {
+  display: block;
+  content: "";
+  width: 2px;
+  position: absolute;
+  background-color: #d4f7e1;
+  height: 30px;
+  left: -27px;
+  z-index: -1;
+}
+.global__step--active:not(.global__step--completed)::before {
+  background-color: #5392f7;
+  color: white;
+  content: counter(list);
+  background-image: none;
+}
+.global__step--active:not(.global__step--completed)::after {
+  background-color: #eaecef;
+}
+.global__step--active .sub {
+  display: block;
+}
+.global__step--active a {
+  color: black;
+}
+.global__step--active a:hover {
+  color: black;
+}
+.global__step--active a:hover span {
+  border-bottom: none;
+}
+.global__step--active a:focus, .global__step--active a :active {
+  color: black;
+  box-shadow: none;
+  outline: none;
+}
+.global__step--active a span {
+  border-bottom: none;
+}
+.global__step--active a span:hover {
+  border-bottom: none;
+}
+.global__step--active ~ * {
+  pointer-events: none;
+}
+.global__step--active ~ * a {
+  color: #858585;
+}
+.global__step--active ~ * a:hover {
+  color: #858585;
+}
+.global__step--active ~ * a:focus, .global__step--active ~ * a :active {
+  color: #858585;
+  box-shadow: none;
+  outline: none;
+}
+.global__step--active ~ * a span {
+  border-bottom: none;
+}
+.global__step--active ~ * a span:hover {
+  border-bottom: none;
+}
+.global__step--active ~ *::before {
+  background-color: white;
+  content: counter(list);
+  background-image: none;
+  border: 2px solid #eaecef;
+  width: 32px;
+  height: 32px;
+  color: #858585;
+  line-height: 32px;
+}
+.global__step--active ~ *::after {
+  background-color: #eaecef;
+}
+.global__step--completed .sub__step::after, .global__step--completed .sub__step::before {
+  background-color: #d4f7e1;
+}
+.global__step--completed .sub__step--active {
+  background: #d4f7e1;
+}
+.global__step--completed .sub__step--active:hover {
+  background: #d4f7e1;
+}
+.global__step--completed .sub__step--active::after {
+  background: linear-gradient(180deg, #d4f7e1 1%, #04b304 50%, #d4f7e1 88%);
+}
+.global__step--completed .sub__step--active::before {
+  background: #04b304;
+}
+
+.sub {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 0;
+  margin-top: 14px;
+  display: none;
+}
+.sub__step {
+  position: relative;
+  margin-bottom: 8px;
+  width: fit-content;
+  padding-left: 44px;
+  margin-left: -44px;
+  border-radius: 2px;
+  line-height: 24px;
+  letter-spacing: -0.09px;
+}
+.sub__step a {
+  padding-right: 12px;
+}
+.sub__step:hover {
+  background: #f5f6f8;
+}
+.sub__step:active {
+  box-shadow: 0 0 1px 1px #FFC633;
+  border-radius: 2px;
+  outline: none;
+}
+.sub__step:not(:active) a:focus span {
+  box-shadow: 0 0 1px 1px #FFC633;
+  border-radius: 2px;
+  outline: none;
+}
+.sub__step::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #5392f7;
+  border-radius: 1px;
+  position: absolute;
+  left: 17px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+.sub__step::after {
+  display: block;
+  content: "";
+  width: 2px;
+  position: absolute;
+  background-color: #5392f7;
+  left: 17px;
+  top: -8px;
+  bottom: -8px;
+}
+.sub__step:nth-of-type(1)::after {
+  top: -14px;
+}
+.sub__step--active {
+  background: #ebf1fb;
+  font-weight: 500;
+}
+.sub__step--active::before {
+  background-color: #5392f7;
+}
+.sub__step--active::after {
+  background: linear-gradient(180deg, #5392f7 58%, #ebf1fb 80%);
+}
+.sub__step--active ~ *::before {
+  background: #ebf1fb;
+}
+.sub__step--active ~ *::after {
+  background: #ebf1fb;
+}
+
+/*# sourceMappingURL=style.css.map */
