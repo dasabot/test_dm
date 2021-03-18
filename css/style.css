@@ -17,12 +17,12 @@ ul {
   list-style-type: none;
 }
 
-.global {
+.nav {
   counter-reset: list;
   overflow: hidden;
   padding: 5px 50px;
 }
-.global__step {
+.nav__step {
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
@@ -30,35 +30,35 @@ ul {
   margin-bottom: 30px;
   letter-spacing: -0.26px;
 }
-.global__step a {
+.nav__step a {
   margin-left: -46px;
   padding-left: 44px;
   display: block;
   width: fit-content;
   padding-right: 15px;
 }
-.global__step a:focus, .global__step a:active {
+.nav__step a:focus, .nav__step a:active {
   color: #eb4410;
   box-shadow: 0 0 1px 1px #FFC633;
   border-radius: 2px;
   outline: none;
 }
-.global__step a:hover {
+.nav__step a:hover {
   color: #eb4410;
 }
-.global__step a span {
+.nav__step a span {
   border-bottom: 1px solid #eaecef;
 }
-.global__step a:hover span {
+.nav__step a:hover span {
   border-bottom: 1px solid #eec7ba;
 }
-.global__step:last-of-type {
+.nav__step:last-of-type {
   margin-bottom: 0;
 }
-.global__step:last-of-type::after {
+.nav__step:last-of-type::after {
   display: none;
 }
-.global__step::before {
+.nav__step::before {
   counter-increment: list;
   content: "";
   position: absolute;
@@ -73,7 +73,7 @@ ul {
   background-repeat: no-repeat;
   background-position: center;
 }
-.global__step::after {
+.nav__step::after {
   display: block;
   content: "";
   width: 2px;
@@ -83,56 +83,56 @@ ul {
   left: -27px;
   z-index: -1;
 }
-.global__step--active:not(.global__step--completed)::before {
+.nav__step--active:not(.nav__step--completed)::before {
   background-color: #5392f7;
   color: white;
   content: counter(list);
   background-image: none;
 }
-.global__step--active:not(.global__step--completed)::after {
+.nav__step--active:not(.nav__step--completed)::after {
   background-color: #eaecef;
 }
-.global__step--active a {
+.nav__step--active a {
   color: black;
 }
-.global__step--active a:hover {
+.nav__step--active a:hover {
   color: black;
 }
-.global__step--active a:hover span {
+.nav__step--active a:hover span {
   border-bottom: none;
 }
-.global__step--active a:focus, .global__step--active a:active {
+.nav__step--active a:focus, .nav__step--active a:active {
   color: black;
   box-shadow: none;
   outline: none;
 }
-.global__step--active a span {
+.nav__step--active a span {
   border-bottom: none;
 }
-.global__step--active a span:hover {
+.nav__step--active a span:hover {
   border-bottom: none;
 }
-.global__step--active ~ * {
+.nav__step--active ~ * {
   pointer-events: none;
 }
-.global__step--active ~ * a {
+.nav__step--active ~ * a {
   color: #858585;
 }
-.global__step--active ~ * a:hover {
+.nav__step--active ~ * a:hover {
   color: #858585;
 }
-.global__step--active ~ * a:focus, .global__step--active ~ * a:active {
+.nav__step--active ~ * a:focus, .nav__step--active ~ * a:active {
   color: #858585;
   box-shadow: none;
   outline: none;
 }
-.global__step--active ~ * a span {
+.nav__step--active ~ * a span {
   border-bottom: none;
 }
-.global__step--active ~ * a span:hover {
+.nav__step--active ~ * a span:hover {
   border-bottom: none;
 }
-.global__step--active ~ *::before {
+.nav__step--active ~ *::before {
   background-color: white;
   content: counter(list);
   background-image: none;
@@ -142,28 +142,28 @@ ul {
   color: #858585;
   line-height: 32px;
 }
-.global__step--active ~ *::after {
+.nav__step--active ~ *::after {
   background-color: #eaecef;
 }
-.global__step--active .global__step__sublist {
+.nav__step--active .nav__sub-list {
   display: block;
 }
-.global__step--completed .global__step__sublist__step::after, .global__step--completed .global__step__sublist__step::before {
+.nav__step--completed .nav__sub-list .nav__sub-item::after, .nav__step--completed .nav__sub-list .nav__sub-item::before {
   background-color: #d4f7e1;
 }
-.global__step--completed .global__step__sublist__step--active {
+.nav__step--completed .nav__sub-list .nav__sub-item--active {
   background: #d4f7e1;
 }
-.global__step--completed .global__step__sublist__step--active:hover {
+.nav__step--completed .nav__sub-list .nav__sub-item--active:hover {
   background: #d4f7e1;
 }
-.global__step--completed .global__step__sublist__step--active::after {
+.nav__step--completed .nav__sub-list .nav__sub-item--active::after {
   background: linear-gradient(180deg, #d4f7e1 1%, #04b304 50%, #d4f7e1 88%);
 }
-.global__step--completed .global__step__sublist__step--active::before {
+.nav__step--completed .nav__sub-list .nav__sub-item--active::before {
   background: #04b304;
 }
-.global__step__sublist {
+.nav__sub-list {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
@@ -171,7 +171,7 @@ ul {
   margin-top: 14px;
   display: none;
 }
-.global__step__sublist__step {
+.nav__sub-item {
   position: relative;
   margin-bottom: 8px;
   width: fit-content;
@@ -181,23 +181,23 @@ ul {
   line-height: 24px;
   letter-spacing: -0.09px;
 }
-.global__step__sublist__step a {
+.nav__sub-item a {
   padding-right: 12px;
 }
-.global__step__sublist__step:hover {
+.nav__sub-item:hover {
   background: #f5f6f8;
 }
-.global__step__sublist__step:active {
+.nav__sub-item:active {
   box-shadow: 0 0 1px 1px #FFC633;
   border-radius: 2px;
   outline: none;
 }
-.global__step__sublist__step:not(:active) a:focus span {
+.nav__sub-item:not(:active) a:focus span {
   box-shadow: 0 0 1px 1px #FFC633;
   border-radius: 2px;
   outline: none;
 }
-.global__step__sublist__step::before {
+.nav__sub-item::before {
   content: "";
   width: 5px;
   height: 5px;
@@ -209,7 +209,7 @@ ul {
   bottom: 0;
   margin: auto 0;
 }
-.global__step__sublist__step::after {
+.nav__sub-item::after {
   display: block;
   content: "";
   width: 2px;
@@ -219,23 +219,23 @@ ul {
   top: -8px;
   bottom: -8px;
 }
-.global__step__sublist__step:nth-of-type(1)::after {
+.nav__sub-item:nth-of-type(1)::after {
   top: -14px;
 }
-.global__step__sublist__step--active {
+.nav__sub-item--active {
   background: #ebf1fb;
   font-weight: 500;
 }
-.global__step__sublist__step--active::before {
+.nav__sub-item--active::before {
   background-color: #5392f7;
 }
-.global__step__sublist__step--active::after {
+.nav__sub-item--active::after {
   background: linear-gradient(180deg, #5392f7 58%, #ebf1fb 80%);
 }
-.global__step__sublist__step--active ~ *::before {
+.nav__sub-item--active ~ *::before {
   background: #ebf1fb;
 }
-.global__step__sublist__step--active ~ *::after {
+.nav__sub-item--active ~ *::after {
   background: #ebf1fb;
 }
 
