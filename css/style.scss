@@ -196,7 +196,7 @@ ul {
             background-color: $light-green;
           }
 
-          &--active {
+          &_type_active {
             background: $light-green;
 
             &:hover {
@@ -288,7 +288,7 @@ ul {
         }
       }
 
-      &--active {
+      &_type_active {
         background: $light-blue;
         font-weight: 500;
 
