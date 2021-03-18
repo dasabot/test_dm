@@ -98,7 +98,7 @@ ul {
       z-index: -1;
     }
 
-    &--active:not(&--completed) {
+    &_type_active:not(&_type_completed) {
       &::before {
         background-color: $blue;
         color: white;
@@ -111,7 +111,7 @@ ul {
       }
     }
 
-    &--active {
+    &_type_active {
 
       a {
         color: black;
@@ -183,11 +183,11 @@ ul {
       }
     }
 
-    &--active .nav__sub-list {
+    &_type_active .nav__sub-list {
       display: block;
     }
 
-    &--completed {
+    &_type_completed {
       .nav__sub-list {
         .nav__sub-item {
 
